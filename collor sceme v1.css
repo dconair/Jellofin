@@ -1,0 +1,34 @@
+/* New color scheme */
+
+:root {
+  --accent: 215, 38, 61;           /* #D7263D */
+  --accent-off: 244, 96, 54;       /* #F46036 */
+  --dark: 40, 63, 59;              /* #283F3B */
+  --darkest: 27, 153, 139;         /* #1B998B */
+  --dark-highlight: 197, 216, 109; /* #C5D86D */
+  --dark-apparent: 255, 255, 255;  /* Light gray or eggshell white for text */
+  
+  --stylish-login: url("https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/images/login-wallpapers/stylish-yellow.png");
+}
+
+#loginPage {
+  background: url("https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/images/login-wallpapers/minimal-yellow.png") !important;
+}
+
+.layout-tv .backgroundContainer, 
+.layout-desktop .backgroundContainer {
+  background: url("https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/images/gradients/yellow.png") no-repeat center center;
+}
+
+.sessionAppInfo img {
+  filter: invert(40%) sepia(70%) saturate(285%) hue-rotate(30deg) brightness(150%) contrast(60%);
+}
+
+/* Additional styles for text readability */
+body {
+  color: rgba(255, 255, 255, 0.9); /* Light gray or eggshell white text */
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: rgba(255, 255, 255, 0.9); /* Ensuring headings and paragraphs are readable */
+}
