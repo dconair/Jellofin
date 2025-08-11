@@ -1,0 +1,218 @@
+/* Custom Jellyfin Theme with login page and color palette */
+
+/* Base font import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Color palette derived from user request */
+:root {
+  --accent: #F46036;                /* #F46036 */
+  --accent-off: #D7263D;            /* #D7263D */
+  --dark: #283F3B;                  /* #283F3B */
+  --darkest: #1B2B27;               /* #1B2B27 (derived) */
+  --dark-highlight: #1B998B;        /* #1B998B */
+  --dark-apparent: #C5D86D;         /* #C5D86D */
+  --rounding: 12px;
+  --rounding-alt: 9px;
+  --rounding-large: 24px;
+  --rounding-circle: 100px;
+}
+
+/* Login page styling based on provided mockup */
+#loginPage {
+  --bg-1: #283F3B;
+  --bg-2: #1B2B27;
+  --card: #1F342F;
+  --card-2: #162825;
+  --text: #e7edf2;
+  --muted: #C5D86D;
+  --button: #C5D86D;
+  --button-text: #283F3B;
+  --ring: rgba(244, 96, 54, .45);
+  --radius: 22px;
+
+  background:
+    radial-gradient(1200px 800px at 70% 10%, #1F342F 0%, transparent 60%),
+    radial-gradient(900px 600px at 20% 80%, #162825 0%, transparent 60%),
+    linear-gradient(160deg, var(--bg-1), var(--bg-2));
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 20px 72px;
+  line-height: 1.4;
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+#loginPage .brand {
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: .92;
+  user-select: none;
+  pointer-events: none;
+}
+
+#loginPage .brand svg {
+  display: block;
+}
+
+#loginPage .brand .word {
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+#loginPage .card {
+  width: min(520px, 92vw);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, 0) 14%),
+    linear-gradient(180deg, var(--card), var(--card-2));
+  border-radius: var(--radius);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .45), 0 2px 8px rgba(0, 0, 0, .35);
+  padding: 28px 26px 24px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, .06);
+}
+
+#loginPage .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 2px 2px 18px;
+}
+
+#loginPage .title .dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffe7a6 0 40%, #f1c76e 41% 70%, #9f8148 71% 100%);
+  box-shadow: 0 0 0 6px rgba(255, 235, 175, .08), 0 8px 24px rgba(0, 0, 0, .35);
+  flex: 0 0 auto;
+}
+
+#loginPage .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  justify-items: center;
+  padding: 6px 6px 2px;
+}
+
+#loginPage .avatar {
+  width: 108px;
+  height: 108px;
+  border-radius: 22px;
+  background: #152b34;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .06);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .35);
+}
+
+#loginPage .avatar--1 {
+  background: linear-gradient(160deg, #1B998B 0 45%, #C5D86D 45% 100%);
+}
+
+#loginPage .avatar--2 {
+  background: linear-gradient(180deg, #1F342F, #283F3B);
+}
+
+#loginPage .avatar--3 {
+  background: linear-gradient(180deg, #283F3B, #1B2B27);
+}
+
+#loginPage .avatar--4 {
+  background: linear-gradient(160deg, #D7263D 0 55%, #F46036 55% 100%);
+}
+
+#loginPage .avatar--5 {
+  background: radial-gradient(circle at 70% 30%, #C5D86D 0 22%, transparent 23%), linear-gradient(160deg, #F46036 0 55%, #D7263D 55% 100%);
+}
+
+#loginPage .name {
+  margin-top: 6px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .3px;
+  user-select: none;
+}
+
+#loginPage .actions {
+  display: grid;
+  gap: 12px;
+  margin: 22px 4px 8px;
+}
+
+#loginPage .btn {
+  appearance: none;
+  border: 0;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--button);
+  color: var(--button-text);
+  font-weight: 600;
+  letter-spacing: .2px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .25);
+  transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+}
+
+#loginPage .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 6px var(--ring), 0 6px 14px rgba(0, 0, 0, .25);
+}
+
+#loginPage .btn:hover {
+  transform: translateY(-1px);
+}
+
+#loginPage .btn:active {
+  transform: translateY(0);
+}
+
+#loginPage .btn.secondary {
+  background: #e6e8eb;
+}
+
+#loginPage .foot {
+  margin: 22px 2px 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .25px;
+  user-select: none;
+}
+
+#loginPage .row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin-top: 2px;
+}
+
+#loginPage .row-2 .spacer {
+  visibility: hidden;
+}
+
+@media (max-width: 520px) {
+  #loginPage .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 18px;
+  }
+  
+  #loginPage .title {
+    font-size: 22px;
+  }
+}
